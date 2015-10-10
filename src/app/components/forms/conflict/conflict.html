@@ -1,0 +1,13 @@
+<div class="panel panel-default default-chat" ng-init="init()">
+  <div class="panel-body">
+    User {{conflicts.firstUser.name}}
+    <br/>
+    User {{conflicts.secondUser.name}}
+    <br/>
+    Mediador {{conflicts.mediator.name}}
+    <br/>
+    <div ng-repeat="component in conflicts.components">
+        <simple-message user1="conflicts.firstUser" user2="conflicts.secondtUser" mediator="conflicts.mediator" data="component" ></simple-message>
+    </div>
+  </div>
+</div>

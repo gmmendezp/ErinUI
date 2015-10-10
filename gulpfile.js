@@ -8,6 +8,7 @@
 
 var gulp = require('gulp');
 var wrench = require('wrench');
+var Karma = require('karma');
 
 /**
  *  This will load all js or coffee files in the gulp directory
@@ -27,3 +28,4 @@ wrench.readdirSyncRecursive('./gulp').filter(function(file) {
 gulp.task('default', ['clean'], function () {
   gulp.start('build');
 });
+
