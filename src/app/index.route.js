@@ -12,6 +12,11 @@
         controller: 'MainController',
         controllerAs: 'main'
       })
+      .when('/form', {
+        templateUrl: 'app/form/form.html',
+        controller: 'FormController',
+        controllerAs: 'form'
+      })
       .otherwise({
         redirectTo: '/'
       });
