@@ -6,6 +6,7 @@
     .config(routeConfig);
 
   function routeConfig($routeProvider) {
+
     $routeProvider
       .when('/conflict', {
         templateUrl: 'app/main/main.html',
@@ -17,7 +18,7 @@
         controller: 'LoginController',
         controllerAs: 'login'
       })
-      .when('/', {
+      .when('/conflictRegistration', {
         templateUrl: 'app/conflictRegistration/conflictRegistration.html',
         controller: 'ConflictRegistration',
         controllerAs: 'conflictRegistration'

@@ -22,7 +22,6 @@
 
     /** @ngInject */
     function QuestionController($scope, $cookies, $location) {
-      var vm = this;
 
       var userCookie = $cookies.get("user");
       if (userCookie) {
@@ -30,17 +29,24 @@
       } else {
         $location.path("/");
       }
+      var vm = this;
+      $scope.submit = function () {
+        var model = $scope.model;
+        if (typeof(model) === "string") {
+          model = [model];
+        }
+        var valueToSave = model;
+        valueToSave.question = vm.question.id;
+        valueToSave.user = user.id;
+        erinWebsocket.send(valueToSave, "/Input/Components/" + $scope.conflictId + "/answer");
+      };
 
       if (vm.question) {
         var question = vm.question.structure.metaData;
-        console.log(question);
         $scope.schema = question.schema;
-        question.form[0]['onChange'] = function () {
-          var valueToSave = $scope.model;
-          valueToSave['question'] = question.schema.properties.answer.title;
-        };
+        $scope.schema.properties.answer.validationMessage = " ";
         $scope.form = question.form;
-
+        $scope.timestamp = moment(vm.question.timestamp).fromNow();
         $scope.model = {};
       }
     }
