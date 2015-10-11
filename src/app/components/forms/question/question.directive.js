@@ -21,8 +21,15 @@
     return directive;
 
     /** @ngInject */
-    function QuestionController($scope) {
+    function QuestionController($scope, $cookies, $location) {
       var vm = this;
+
+      var userCookie = $cookies.get("user");
+      if (userCookie) {
+        var user = JSON.parse(userCookie);
+      } else {
+        $location.path("/");
+      }
 
       if (vm.question) {
         var question = vm.question.structure.metaData;
