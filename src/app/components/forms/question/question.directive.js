@@ -41,7 +41,9 @@
           question : vm.question.id,
           userId : user.id
         };
-        erinWebsocket.send(valueToSave, "/Input/Components/" + vm.conflict.id + "/Answer");
+        if(valueToSave && valueToSave.model){
+          erinWebsocket.send(valueToSave, "/Input/Components/" + vm.conflict.id + "/Answer");
+        }
       };
 
       if (vm.question) {
