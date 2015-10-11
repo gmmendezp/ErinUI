@@ -12,7 +12,7 @@
   <div class="list-group" ng-if="step == 2">
     <div class="form-group">
       <label>Pregunta</label>
-      <input type="text" class="form-control" ng-model="qTitle" />
+      <input type="text" class="form-control" ng-model="qTitle[0]" />
     </div>
     <div ng-if="hasOptions">
       <div class="form-group" ng-repeat="option in options">
