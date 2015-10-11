@@ -32,8 +32,21 @@
   transform:scale(2, 2);
   margin-top: 25px;
 }
+
+.superGenericForm .radio input[type=radio]{
+  transform:scale(2, 2);
+  margin-top: 20px;
+}
+
 .superGenericForm .checkbox .ng-binding {
   padding-left: 10px;
+}
+
+.superGenericForm .radio .ng-binding {
+  padding-left: 10px;
+}
+.superGenericForm .ng-invalid input, .superGenericForm .ng-valid, input,.superGenericForm .ng-invalid label, .superGenericForm .ng-valid, label{
+  color: #000 !important;
 }
 
 .chat-body{
