@@ -45,6 +45,8 @@
             var response = JSON.parse(component.body);
             console.log("Llega Response: ", response);
             $scope.conflicts.components.push(response);
+            $scope.message = "";
+            $scope.$apply();
           });
         erinWebsocket.connect();
 
