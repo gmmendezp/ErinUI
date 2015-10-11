@@ -11,7 +11,7 @@
     $scope.init = function () {
       $http({
         method: 'GET',
-        url: 'http://54.152.26.54:8080/erin/component/metadata'
+        url: 'http://54.152.29.242:8080/erin/component/metadata'
       }).then(function successCallback(response) {
         $scope.questions = response.data;
       }, function errorCallback(response) {
@@ -22,7 +22,7 @@
 
     $scope.next = function (question) {
       $scope.step++;
-      $scope.title = "";
+      $scope.qTitle = "";
       $scope.question = question;
       $scope.options = [{id: 0, value: ""}];
       var inputEnum = question.metaData.schema.properties.answer.enum;
@@ -41,9 +41,9 @@
       $scope.options.forEach(function(option){
             this.push(option["value"]);
       }, options);
-      $scope.question.metaData.schema.properties.answer.title = $scope.title;
+      $scope.question.metaData.schema.properties.answer.title = $scope.qTitle;
       $scope.question.metaData.schema.properties.answer.enum = options;
-      $modalInstance.close($scope.question);
+      //$modalInstance.close($scope.question);
     };
 
     $scope.cancel = function () {

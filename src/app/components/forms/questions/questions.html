@@ -11,13 +11,13 @@
   </div>
   <div class="list-group" ng-if="step == 2">
     <div class="form-group">
-      <label for="title">Pregunta</label>
-      <input type="text" id="title" class="form-control" ng-model="title" />
+      <label>Pregunta</label>
+      <input type="text" class="form-control" ng-model="qTitle" />
     </div>
     <div ng-if="hasOptions">
       <div class="form-group" ng-repeat="option in options">
-        <label for="{{option}}">Opcion</label>
-        <input type="text" id={{option}}" class="form-control" ng-model="option.value"/>
+        <labels>Opcion</labels>
+        <input type="text" class="form-control" ng-model="option.value"/>
       </div>
       <button type="button" class="btn btn-lg btn-block" ng-click="newOption(question)">Agregar opción</button>
     </div>
