@@ -22,7 +22,7 @@
 
     $scope.next = function (question) {
       $scope.step++;
-      $scope.title = "";
+      $scope.qTitle = "";
       $scope.question = question;
       $scope.options = [{id: 0, value: ""}];
       var inputEnum = question.metaData.schema.properties.answer.enum;
@@ -41,10 +41,9 @@
       $scope.options.forEach(function(option){
             this.push(option["value"]);
       }, options);
-      $scope.question.metaData.schema.properties.answer.title = $scope.title;
+      $scope.question.metaData.schema.properties.answer.title = $scope.qTitle;
       $scope.question.metaData.schema.properties.answer.enum = options;
-      console.log($scope.question);
-      $modalInstance.close($scope.question);
+      //$modalInstance.close($scope.question);
     };
 
     $scope.cancel = function () {

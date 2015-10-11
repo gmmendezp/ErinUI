@@ -61,7 +61,6 @@
         });
 
         modalInstance.result.then(function (selectedItem) {
-          console.log(selectedItem)
           if (selectedItem) {
             erinWebsocket.send({
               "userId": "2",
