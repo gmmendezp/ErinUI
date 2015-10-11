@@ -1,4 +1,5 @@
-(function () {
+(function() {
+
   'use strict';
 
   angular
@@ -11,7 +12,7 @@
       restrict: 'E',
       templateUrl: 'app/components/forms/simple-message/simple-message.html',
       scope: {
-        data: "=data",
+        data: "=",
         user1: "=user1",
         user2: "=user2",
         mediator: "=mediator"
@@ -27,18 +28,10 @@
     function SimpleMessageController($scope) {
       var vm = this;
 
-      if (vm.user1 && vm.user2 && vm.mediator && vm.data) {
-        var userMap = {};
-        userMap[vm.user1['id']] = vm.user1;
-        userMap[vm.user2['id']] = vm.user2;
-        userMap[vm.mediator['id']] = vm.mediator;
+      $scope.name = "Cesar";
+      $scope.urlImage = "http://cdn.iwillteachyoutoberich.com/wp-content/uploads/2008/11/generic-candy.jpg";
+      $scope.text = vm.data.value;
 
-        $scope.userMap = userMap;
-        $scope.name = "Cesar";
-        $scope.urlImage = "http://cdn.iwillteachyoutoberich.com/wp-content/uploads/2008/11/generic-candy.jpg";
-        $scope.text = vm.data.value;
-        $scope.userId = vm.data.userId;
-      }
     }
   }
 
