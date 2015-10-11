@@ -7,9 +7,35 @@
   transition: text-shadow 0.5s;
   color: #FFF;
   box-shadow: 0px 0px 1px #FFF inset;
+  margin-bottom: 15px;
+
 }
 .sendFromInChat:hover{
   text-shadow: 0px 0px 10px #FFF;
   color: #FFF;
   background: #337ab7;
+}
+
+
+
+.superGenericForm .btn-group label{
+  font-weight: bold;
+  font-size: 30px;
+  width: 100px;
+}
+
+
+.superGenericForm .btn-group{
+  margin: 0px auto;
+}
+.superGenericForm .checkbox input[type=checkbox] {
+  transform:scale(2, 2);
+  margin-top: 25px;
+}
+.superGenericForm .checkbox .ng-binding {
+  padding-left: 10px;
+}
+
+.chat-body{
+
 }
