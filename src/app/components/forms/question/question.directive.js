@@ -11,7 +11,8 @@
       restrict: 'E',
       templateUrl: 'app/components/forms/question/question.html',
       scope: {
-        "question": "=question"
+        "question": "=question",
+        "conflict": "=conflict"
       },
       controller: QuestionController,
       controllerAs: 'question',
@@ -31,14 +32,16 @@
       }
       var vm = this;
       $scope.submit = function () {
-        var model = $scope.model;
-        if (typeof(model) === "string") {
+        var model = $scope.model.answer;
+        if (typeof model === "string") {
           model = [model];
         }
-        var valueToSave = model;
-        valueToSave.question = vm.question.id;
-        valueToSave.user = user.id;
-        erinWebsocket.send(valueToSave, "/Input/Components/" + $scope.conflictId + "/answer");
+        var valueToSave = {
+          answer : model,
+          question : vm.question.id,
+          userId : user.id
+        };
+        erinWebsocket.send(valueToSave, "/Input/Components/" + vm.conflict.id + "/Answer");
       };
 
       if (vm.question) {

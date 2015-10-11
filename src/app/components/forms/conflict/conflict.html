@@ -1,5 +1,9 @@
 <div class="container" ng-init="init()">
+  <<<<<<< 1dfabf6d2daec139682afc7add81caccd72662a8
   <input type="hidden" ng-value="foo"/>
+  =======
+  <input type="hidden" ng-value="conflictId"/>
+  >>>>>>> added answers
 
   <div class="border row">
 
@@ -11,7 +15,10 @@
           <div class="btn-group pull-right">
             <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown"
                     style="margin-right:4px;" ng-click="callMeeting()">
+              <<<<<<< 1dfabf6d2daec139682afc7add81caccd72662a8
 
+              =======
+              >>>>>>> added answers
               Llamada <span class="glyphicon glyphicon glyphicon-phone"></span>
             </button>
             <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown"
@@ -28,9 +35,11 @@
               mediator="conflicts.mediator"
               data="component" ng-if="component.type == 'MESSAGE' ">
             </simple-message>
-
-            <question question="component" ng-if="component.type == 'FORM'"/>
-
+            <answer user1="conflicts.firstUser"
+                    user2="conflicts.secondUser"
+                    mediator="conflicts.mediator"
+                    data="component" ng-if="component.type == 'ANSWER'"/>
+            <question question="component" conflict="conflicts" ng-if="component.type == 'FORM'"/>
             <videocall
               data="component"
               user1="conflicts.firstUser"
@@ -38,7 +47,6 @@
               mediator="conflicts.mediator"
               ng-if="component.type == 'CALL'">
             </videocall>
-
           </ul>
         </div>
         <div class="panel-footer">

@@ -86,7 +86,6 @@
         }
       };
       $scope.callMeeting = function () {
-
         erinWebsocket.send({
           "userId": user.id,
           "type": "CALL"
