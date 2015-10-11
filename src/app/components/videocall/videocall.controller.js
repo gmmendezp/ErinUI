@@ -24,7 +24,7 @@
     return directive;
 
     /** @ngInject */
-    function VideocallController($scope) {
+    function VideocallController($scope, moment) {
       var vm  = this;
       if (vm.user1 && vm.user2 && vm.mediator && vm.data) {
         var userMap = {};
@@ -33,6 +33,7 @@
         userMap[vm.mediator['id']] = vm.mediator;
         $scope.userMap = userMap;
         $scope.userId = vm.data.userId;
+        $scope.timestamp = moment(vm.data.timestamp).fromNow();
       }
 
       $scope.init = function(){
