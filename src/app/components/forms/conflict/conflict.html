@@ -19,7 +19,7 @@
                 mediator="conflicts.mediator"
                 data="component" ng-if="component.type == 'MESSAGE' ">
               </simple-message>
-              <question questionId="component.id" ng-if="component.type == 'FORM'"/>
+              <question question="component" ng-if="component.type == 'FORM'"/>
               <videocall data="conflicts.id" ng-if="component.type == 'CALL'" > </videocall>
           </ul>
         </div>
