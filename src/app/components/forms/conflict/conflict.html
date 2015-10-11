@@ -1,5 +1,6 @@
 <div class="container" ng-init="init()">
-  <input type="hidden" ng-value="foo" />
+  <input type="hidden" ng-value="foo"/>
+
   <div class="border row">
 
     <div class="border col-sm-9">
@@ -8,34 +9,44 @@
         <div class="panel-heading">
           <span class="glyphicon glyphicon-comment"></span> Chat
           <div class="btn-group pull-right">
-            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" style="margin-right:4px;" ng-click="callMeeting()">
-              Llamada <span class="glyphicon glyphicon glyphicon-phone" ></span>
+            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown"
+                    style="margin-right:4px;" ng-click="callMeeting()">
+
+              Llamada <span class="glyphicon glyphicon glyphicon-phone"></span>
             </button>
-            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown"  ng-click="openQuestions()">
+            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown"
+                    ng-click="openQuestions()">
               Pregunta <span class="glyphicon glyphicon glyphicon-pencil"></span>
             </button>
           </div>
         </div>
         <div class="panel-body with-scroll" scroll-glue>
           <ul class="chat" ng-repeat="component in conflicts.components">
-              <simple-message
-                user1="conflicts.firstUser"
-                user2="conflicts.secondUser"
-                mediator="conflicts.mediator"
-                data="component" ng-if="component.type == 'MESSAGE' ">
-              </simple-message>
-              <question question="component" ng-if="component.type == 'FORM'"/>
-              <videocall data="conflicts.id"
-                         user1="conflicts.firstUser"
-                         user2="conflicts.secondUser"
-                         mediator="conflicts.mediator" ng-if="component.type == 'CALL'" > </videocall>
+            <simple-message
+              user1="conflicts.firstUser"
+              user2="conflicts.secondUser"
+              mediator="conflicts.mediator"
+              data="component" ng-if="component.type == 'MESSAGE' ">
+            </simple-message>
+
+            <question question="component" ng-if="component.type == 'FORM'"/>
+
+            <videocall
+              data="component"
+              user1="conflicts.firstUser"
+              user2="conflicts.secondUser"
+              mediator="conflicts.mediator"
+              ng-if="component.type == 'CALL'">
+            </videocall>
+
           </ul>
         </div>
         <div class="panel-footer">
           <div class="input-group">
-            <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." ng-model="message" ng-keypress="($event.which === 13)?sendMessage():0"/>
+            <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..."
+                   ng-model="message" ng-keypress="($event.which === 13)?sendMessage():0"/>
                         <span class="input-group-btn">
-                            <button class="btn btn-warning btn-sm" id="btn-chat" ng-click="sendMessage()"   >
+                            <button class="btn btn-warning btn-sm" id="btn-chat" ng-click="sendMessage()">
                               Send
                             </button>
                         </span>
@@ -46,9 +57,10 @@
     </div>
     <div class="border col-sm-3">
       <h3>Pasos a seguir</h3>
+
       <div ng-repeat="pre in conflicts.preConflictSteps">
         <input id="checkSlave" type="checkbox" ng-checked="pre.approved" disabled="true" aria-label="Slave input">
-         {{pre.title}}
+        {{pre.title}}
       </div>
     </div>
   </div>

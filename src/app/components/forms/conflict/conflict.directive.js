@@ -21,14 +21,14 @@
     return directive;
 
     /** @ngInject */
-    function ConflictController($location,$cookies, $scope, $http, $uibModal) {
+    function ConflictController($location, $cookies, $scope, $http, $uibModal) {
       var vm = this;
       $scope.autoScrollEnabled = true;
 
       var userCookie = $cookies.get("user");
-      if(userCookie){
+      if (userCookie) {
         var user = JSON.parse(userCookie);
-      }else{
+      } else {
         $location.path("/");
       }
 
@@ -86,10 +86,11 @@
         }
       };
       $scope.callMeeting = function () {
-          erinWebsocket.send({
-            "userId": user.id,
-            "type": "CALL"
-          }, "/Input/Components/" + $scope.conflictId + "/Message");
+
+        erinWebsocket.send({
+          "userId": user.id,
+          "type": "CALL"
+        }, "/Input/Components/" + $scope.conflictId + "/Call");
       };
 
     }

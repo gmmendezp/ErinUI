@@ -26,17 +26,13 @@
     /** @ngInject */
     function VideocallController($scope) {
       var vm  = this;
-      console.log(vm.user1);
       if (vm.user1 && vm.user2 && vm.mediator && vm.data) {
-        console.log("lol");
         var userMap = {};
         userMap[vm.user1['id']] = vm.user1;
         userMap[vm.user2['id']] = vm.user2;
         userMap[vm.mediator['id']] = vm.mediator;
         $scope.userMap = userMap;
-        console.log("x ",$scope.userMap);
-
-
+        $scope.userId = vm.data.userId;
       }
 
       $scope.init = function(){

@@ -24,8 +24,6 @@
 
           var user = response.data;
 
-          console.log(user);
-
           if (user) {
             var userString = JSON.stringify(response.data);
             $cookies.put('user', userString);
