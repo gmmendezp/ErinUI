@@ -1,4 +1,4 @@
-(function () {
+(function() {
   'use strict';
 
   angular
@@ -21,21 +21,32 @@
     return directive;
 
     /** @ngInject */
-    function ConflictController($scope, $http, $uibModal) {
+    function ConflictController($scope, $http) {
       var vm = this;
       $scope.autoScrollEnabled = true;
 
-      $scope.init = function () {
+      $scope.init = function() {
         $http({
           method: 'GET',
           url: 'http://54.152.26.54:8080/erin/conflict/561984c8e4b08d0146a80b62'
         }).then(function successCallback(response) {
           $scope.conflicts = response.data;
           $scope.conflictId = $scope.conflicts.id;
+          console.log($scope.conflictId);
         }, function errorCallback(response) {
           // called asynchronously if an error occurs
           // or server returns response with an error status.
         });
+
+
+        window.erinWebsocket = createWebSocket(
+          'http://localhost:8080/erin/WebSockets', "/Input/Components/Message", '/Output/Components',
+          function (component) {
+            var response = JSON.parse(component.body);
+            console.log("Llega Response: ",response);
+            $scope.conflicts.components.push(response);
+          });
+        erinWebsocket.connect();
 
       };
 
@@ -69,23 +80,12 @@
 
       $scope.sendMessage = function () {
         if ($scope.message) {
-
-          $http({
-            method: 'POST',
-            url: 'http://54.152.26.54:8080/erin/conflict/' + $scope.conflictId + '/message',
-            data: {
-              "userId": "1",
-              "value": $scope.message
-            }
-          }).then(function () {
-            $scope.init();
-          }, function () {
-
+          erinWebsocket.send({
+            "userId": "1",
+            "value": $scope.message
           });
         }
-
       }
-
     }
   }
 
