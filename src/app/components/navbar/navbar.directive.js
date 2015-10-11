@@ -33,8 +33,8 @@
 
       $scope.logout=function(){
         $cookies.remove("user");
-
         $location.path("/");
+        window.user=null;
       }
     }
   }
