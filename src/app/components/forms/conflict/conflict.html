@@ -36,11 +36,11 @@
         </div>
         <div class="panel-footer">
           <div class="input-group">
-            <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..."
+            <input id="btn-input" type="text" class="form-control input-sm" placeholder="Escribe tu Mensaje Aqui..."
                    ng-model="message" ng-keypress="($event.which === 13)?sendMessage():0"/>
-                        <span class="input-group-btn">
-                            <button class="btn btn-warning btn-sm" id="btn-chat" ng-click="sendMessage()">
-                              Send
+                        <span class="wrapperSend input-group-btn">
+                            <button class="sendButton btn" id="btn-chat" ng-click="sendMessage()">
+                              Enviar
                             </button>
                         </span>
           </div>
