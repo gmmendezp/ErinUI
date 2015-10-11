@@ -21,9 +21,11 @@
     return directive;
 
     /** @ngInject */
-    function ConflictController($scope, $http, $uibModal) {
+    function ConflictController($cookies, $scope, $http, $uibModal) {
       var vm = this;
       $scope.autoScrollEnabled = true;
+
+      var user = JSON.parse($cookies.get("user"));
 
       $scope.init = function () {
 
@@ -63,7 +65,7 @@
         modalInstance.result.then(function (selectedItem) {
           if (selectedItem) {
             erinWebsocket.send({
-              "userId": "2",
+              "userId": user.id,
               value: "",
               "structure": selectedItem
             }, "/Input/Components/" + $scope.conflictId + "/Form");
@@ -74,7 +76,7 @@
       $scope.sendMessage = function () {
         if ($scope.message) {
           erinWebsocket.send({
-            "userId": "1",
+            "userId": user.id,
             "value": $scope.message
           }, "/Input/Components/" + $scope.conflictId + "/Message");
         }
