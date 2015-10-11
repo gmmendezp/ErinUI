@@ -21,11 +21,16 @@
     return directive;
 
     /** @ngInject */
-    function ConflictController($cookies, $scope, $http, $uibModal) {
+    function ConflictController($location,$cookies, $scope, $http, $uibModal) {
       var vm = this;
       $scope.autoScrollEnabled = true;
 
-      var user = JSON.parse($cookies.get("user"));
+      var userCookie = $cookies.get("user");
+      if(userCookie){
+        var user = JSON.parse(userCookie);
+      }else{
+        $location.path("/");
+      }
 
       $scope.init = function () {
 
