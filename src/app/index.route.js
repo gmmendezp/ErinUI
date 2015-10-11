@@ -6,6 +6,7 @@
     .config(routeConfig);
 
   function routeConfig($routeProvider) {
+
     $routeProvider
       .when('/conflict', {
         templateUrl: 'app/main/main.html',

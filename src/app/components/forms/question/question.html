@@ -1,2 +1,8 @@
 
-<form sf-schema="schema" sf-form="form" sf-model="model"></form>
+<div class="chat-body clearfix">
+  <div class="header">
+   <small class="pull-right text-muted"><span class="glyphicon glyphicon-time"></span>{{timestamp}}</small>
+  </div>
+  <form sf-schema="schema" sf-form="form" sf-model="model"></form>
+  <button type="button" class="btn btn-primary pull-right" ng-click="submit()">Ok</button>
+ </div>
