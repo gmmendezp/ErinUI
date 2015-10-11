@@ -37,7 +37,7 @@
 
       $scope.init = function(){
         console.log(vm);
-        $scope.url = "https://g2m.me/" + vm.data;
+        $scope.url = "https://g2m.me/" + vm.data.id;
       };
 
 

@@ -133,7 +133,13 @@
 .sendButton{
   font-weight: bold;
   font-size: 31px;
-  border: #BBB solid 1px;
-  box-shadow: 0px 0px 11px #FFF inset;
-  text-shadow: 1px 1px 5px #FFF;
+  border: #555 solid 1px;
+  background: #337ab7;
+  transition: text-shadow 0.5s;
+  color: #FFF;
+  box-shadow: 0px 0px 1px #FFF inset;
+}
+.sendButton:hover{
+  text-shadow: 0px 0px 10px #FFF;
+  color: #FFF;
 }

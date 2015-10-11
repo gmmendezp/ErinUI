@@ -1,0 +1,52 @@
+#wrapperModal {
+
+  margin: 0px auto;
+  font-family: 'Poiret One', cursive;
+  font-size: 35px;
+}
+
+#wrapperModal .modal-title {
+  font-size: 35px;
+}
+
+#wrapperModal .modalBotton {
+  transition: box-shadow 0.5s, border 0.5s, background 0.5s;
+  background-color: #DDD;
+}
+
+#wrapperModal .modalBotton:hover {
+  box-shadow: 0px 0px 5px 0px #66afe9, 0px 0px 1px 0px #FFF inset;
+  border: 1px solid #66afe9;
+  background: #EEE;
+}
+
+#wrapperModal .plusIcon {
+  opacity: 0.5;
+  color: #66afe9;
+}
+
+.boldMotherFucka {
+  font-size: 25px;
+  font-weight: bold;;
+}
+
+.superButton{
+  font-weight: bold;
+  font-size: 31px;
+  border: #555 solid 1px;
+  background: #337ab7;
+  transition: text-shadow 0.5s;
+  color: #FFF;
+  box-shadow: 0px 0px 1px #FFF inset;
+}
+.superButton:hover{
+  text-shadow: 0px 0px 10px #FFF;
+  color: #FFF;
+}
+.superPassThrough{
+  background: green;
+}
+.superPassThrough:hover{
+  background: green;
+}
+

@@ -85,6 +85,7 @@
           }, "/Input/Components/" + $scope.conflictId + "/Message");
         }
       };
+
       $scope.callMeeting = function () {
         erinWebsocket.send({
           "userId": user.id,
