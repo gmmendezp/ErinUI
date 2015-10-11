@@ -1,0 +1,14 @@
+<li class="left clearfix" ng-init="init()"><span class="chat-img pull-left">
+                            <img src="{{userMap[userId].thumbnail}}" alt="User Avatar" class="img-circle profileImage" />
+                        </span>
+  <div class="chat-body clearfix">
+    <div class="header">
+      <strong class="primary-font">{{userMap[userId].name}}</strong> <small class="pull-right text-muted">
+      <span class="glyphicon glyphicon-time"></span>{{timestamp}}</small>
+    </div>
+    <p>
+      <a href="{{url}}" target="_blank" > {{userMap[userId].name}} desea realizar una conferencia!</a>
+    </p>
+  </div>
+</li>
+
