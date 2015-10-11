@@ -1,4 +1,4 @@
-(function() {
+(function () {
 
   'use strict';
 
@@ -28,10 +28,18 @@
     function SimpleMessageController($scope) {
       var vm = this;
 
-      $scope.name = "Cesar";
-      $scope.urlImage = "http://cdn.iwillteachyoutoberich.com/wp-content/uploads/2008/11/generic-candy.jpg";
-      $scope.text = vm.data.value;
+      if (vm.user1 && vm.user2 && vm.mediator && vm.data) {
+        var userMap = {};
+        userMap[vm.user1['id']] = vm.user1;
+        userMap[vm.user2['id']] = vm.user2;
+        userMap[vm.mediator['id']] = vm.mediator;
 
+        $scope.userMap = userMap;
+        $scope.name = "Cesar";
+        $scope.urlImage = "http://cdn.iwillteachyoutoberich.com/wp-content/uploads/2008/11/generic-candy.jpg";
+        $scope.text = vm.data.value;
+        $scope.userId = vm.data.userId;
+      }
     }
   }
 
