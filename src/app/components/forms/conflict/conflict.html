@@ -25,9 +25,9 @@
         </div>
         <div class="panel-footer">
           <div class="input-group">
-            <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." ng-model="message" />
+            <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." ng-model="message" ng-keypress="($event.which === 13)?sendMessage():0"/>
                         <span class="input-group-btn">
-                            <button class="btn btn-warning btn-sm" id="btn-chat" ng-click="sendMessage()">
+                            <button class="btn btn-warning btn-sm" id="btn-chat" ng-click="sendMessage()"   >
                               Send
                             </button>
                         </span>
