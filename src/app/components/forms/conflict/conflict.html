@@ -1,26 +1,31 @@
 <div class="container" ng-init="init()">
   <input type="hidden" ng-value="foo" />
-  <div class="row">
-    <div class="col-md-10">
+  <div class="border row">
+
+    <div class="border col-sm-9">
+
       <div class="panel panel-primary">
         <div class="panel-heading">
           <span class="glyphicon glyphicon-comment"></span> Chat
           <div class="btn-group pull-right">
-            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-              <span class="glyphicon glyphicon glyphicon-pencil" ng-click="openQuestions()"></span>
+            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" style="margin-right:4px;" ng-click="makeCall()">
+              Llamada <span class="glyphicon glyphicon glyphicon-phone" ></span>
+            </button>
+            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown"  ng-click="openQuestions()">
+              Pregunta <span class="glyphicon glyphicon glyphicon-pencil"></span>
             </button>
           </div>
         </div>
         <div class="panel-body with-scroll" scroll-glue>
           <ul class="chat" ng-repeat="component in conflicts.components">
-              <simple-message
-                user1="conflicts.firstUser"
-                user2="conflicts.secondUser"
-                mediator="conflicts.mediator"
-                data="component" ng-if="component.type == 'MESSAGE' ">
-              </simple-message>
-              <question questionId="component.id" ng-if="component.type == 'FORM'"/>
-              <videocall data="conflicts.id" ng-if="component.type == 'CALL'" > </videocall>
+            <simple-message
+              user1="conflicts.firstUser"
+              user2="conflicts.secondUser"
+              mediator="conflicts.mediator"
+              data="component" ng-if="component.type == 'MESSAGE' ">
+            </simple-message>
+            <question questionId="component.id" ng-if="component.type == 'FORM'"/>
+            <videocall data="conflicts.id" ng-if="component.type == 'CALL'" > </videocall>
           </ul>
         </div>
         <div class="panel-footer">
@@ -34,6 +39,16 @@
           </div>
         </div>
       </div>
+
+    </div>
+    <div class="border col-sm-3">
+      <h3>Pasos a seguir</h3>
+      <div ng-repeat="pre in conflicts.preConflictSteps">
+        <input id="checkSlave" type="checkbox" ng-checked="pre.approved" disabled="true" aria-label="Slave input">
+         {{pre.title}}
+      </div>
     </div>
   </div>
+
+
 </div>

@@ -85,7 +85,11 @@
             "value": $scope.message
           }, "/Input/Components/" + $scope.conflictId + "/Message");
         }
-      }
+      };
+
+      $scope.makeCall = function() {
+        alert('alarma');
+      };
     }
   }
 
