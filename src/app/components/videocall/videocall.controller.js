@@ -11,7 +11,10 @@
       restrict: 'E',
       templateUrl: 'app/components/videocall/videocall.html',
       scope: {
-        data: '='
+        data: '=',
+        user1: "=user1",
+        user2: "=user2",
+        mediator: "=mediator"
       },
       controller: VideocallController,
       controllerAs: 'videoController',
@@ -23,11 +26,20 @@
     /** @ngInject */
     function VideocallController($scope) {
       var videoController  = this;
-      console.log(videoController);
-      $scope.init = function(){
+      if (videoController.user1 && videoController.user2 && videoController.mediator && videoController.data) {
+        var userMap = {};
+        userMap[videoController.user1['id']] = videoController.user1;
+        userMap[videoController.user2['id']] = videoController.user2;
+        userMap[videoController.mediator['id']] = videoController.mediator;
+
         console.log(videoController);
-        $scope.url = "https://g2m.me/" + videoController.data;
-      };
+        $scope.init = function(){
+          console.log(videoController);
+          $scope.url = "https://g2m.me/" + videoController.data;
+        };
+
+      }
+
 
 
 

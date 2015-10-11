@@ -86,10 +86,13 @@
           }, "/Input/Components/" + $scope.conflictId + "/Message");
         }
       };
-
-      $scope.makeCall = function() {
-        alert('alarma');
+      $scope.callMeeting = function () {
+          erinWebsocket.send({
+            "userId": user.id,
+            "type": "CALL"
+          }, "/Input/Components/" + $scope.conflictId + "/Message");
       };
+
     }
   }
 
