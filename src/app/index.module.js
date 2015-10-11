@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('test', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ngRoute', 'ui.bootstrap', 'schemaForm']);
+    .module('test', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'ngResource', 'ngRoute', 'ui.bootstrap', 'schemaForm', 'luegg.directives']);
 
 })();
