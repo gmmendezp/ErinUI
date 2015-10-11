@@ -1,5 +1,5 @@
 
-.sendFromInChat{
+.sendFromInChat {
   font-weight: bold;
   font-size: 20px;
   border: #555 solid 1px;
@@ -10,32 +10,35 @@
   margin-bottom: 15px;
 
 }
-.sendFromInChat:hover{
+
+.sendFromInChat:hover {
   text-shadow: 0px 0px 10px #FFF;
   color: #FFF;
   background: #337ab7;
 }
 
-
-
-.superGenericForm .btn-group label{
+.superGenericForm .btn-group label {
   font-weight: bold;
   font-size: 30px;
   width: 100px;
 }
 
-
-.superGenericForm .btn-group{
+.superGenericForm .btn-group {
   margin: 0px auto;
 }
+
 .superGenericForm .checkbox input[type=checkbox] {
-  transform:scale(2, 2);
+  transform: scale(2, 2);
   margin-top: 25px;
 }
 
-.superGenericForm .radio input[type=radio]{
-  transform:scale(2, 2);
+.superGenericForm .radio input[type=radio] {
+  transform: scale(2, 2);
   margin-top: 20px;
+}
+
+.superGenericForm select {
+  border: 1px solid #AAA !important;
 }
 
 .superGenericForm .checkbox .ng-binding {
@@ -45,10 +48,11 @@
 .superGenericForm .radio .ng-binding {
   padding-left: 10px;
 }
-.superGenericForm .ng-invalid input, .superGenericForm .ng-valid, input,.superGenericForm .ng-invalid label, .superGenericForm .ng-valid, label{
-  color: #000 !important;
+
+.superGenericForm label {
+  color: #444 !important;
 }
 
-.chat-body{
+.chat-body {
 
 }
