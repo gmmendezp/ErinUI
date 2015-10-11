@@ -1,0 +1,15 @@
+
+.sendFromInChat{
+  font-weight: bold;
+  font-size: 20px;
+  border: #555 solid 1px;
+  background: #337ab7;
+  transition: text-shadow 0.5s;
+  color: #FFF;
+  box-shadow: 0px 0px 1px #FFF inset;
+}
+.sendFromInChat:hover{
+  text-shadow: 0px 0px 10px #FFF;
+  color: #FFF;
+  background: #337ab7;
+}
