@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -21,11 +21,11 @@
     return directive;
 
     /** @ngInject */
-    function ConflictController($scope, $http) {
+    function ConflictController($scope, $http, $uibModal) {
       var vm = this;
       $scope.autoScrollEnabled = true;
 
-      $scope.init = function() {
+      $scope.init = function () {
         $http({
           method: 'GET',
           url: 'http://54.152.26.54:8080/erin/conflict/561984c8e4b08d0146a80b62'
@@ -39,19 +39,47 @@
 
       };
 
-      $scope.sendMessage = function() {
-        if($scope.message){
+      $scope.openQuestions = function () {
+
+        var modalInstance = $uibModal.open({
+          animation: true,
+          templateUrl: 'app/components/forms/questions/questions.html',
+          controller: 'QuestionsController'
+        });
+
+        modalInstance.result.then(function (selectedItem) {
+          console.log(selectedItem);
+          $http({
+            method: 'POST',
+            url: 'http://54.152.26.54:8080/erin/componentes/' + $scope.conflictId + '/form',
+            data: {
+              "userId": "2",
+              value: "",
+              "structure": selectedItem
+            }
+          }).then(function () {
+            alert('algo');
+          }, function () {
+
+          });
+        }, function () {
+          $log.info('Modal dismissed at: ' + new Date());
+        });
+      };
+
+      $scope.sendMessage = function () {
+        if ($scope.message) {
 
           $http({
             method: 'POST',
             url: 'http://54.152.26.54:8080/erin/conflict/' + $scope.conflictId + '/message',
-            data : {
+            data: {
               "userId": "1",
               "value": $scope.message
             }
-          }).then(function(){
+          }).then(function () {
             $scope.init();
-          }, function(){
+          }, function () {
 
           });
         }
