@@ -1,4 +1,4 @@
-function createWebSocket(host, inputPath, outputPath, receiveCallback) {
+function createWebSocket(host, outputPath, receiveCallback) {
   var stompClient = null;
 
   function doConnect() {
@@ -18,7 +18,7 @@ function createWebSocket(host, inputPath, outputPath, receiveCallback) {
     console.log("Disconnected");
   }
 
-  function doSend(json) {
+  function doSend(json, inputPath) {
     stompClient.send(inputPath, {}, JSON.stringify(json));
   }
 

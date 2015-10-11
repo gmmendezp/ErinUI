@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   angular
@@ -25,7 +25,7 @@
       var vm = this;
       $scope.autoScrollEnabled = true;
 
-      $scope.init = function() {
+      $scope.init = function () {
         $http({
           method: 'GET',
           url: 'http://54.152.29.242:8080/erin/conflict/561984c8e4b08d0146a80b62'
@@ -40,10 +40,10 @@
 
 
         window.erinWebsocket = createWebSocket(
-          'http://54.152.29.242:8080/erin/WebSockets', "/Input/Components/Message", '/Output/Components',
+          'http://54.152.29.242:8080/erin/WebSockets', '/Output/Components',
           function (component) {
             var response = JSON.parse(component.body);
-            console.log("Llega Response: ",response);
+            console.log("Llega Response: ", response);
             $scope.conflicts.components.push(response);
           });
         erinWebsocket.connect();
@@ -83,7 +83,7 @@
           erinWebsocket.send({
             "userId": "1",
             "value": $scope.message
-          });
+          }, "/Input/Components/" + $scope.conflictId + "/Message");
         }
       }
     }
