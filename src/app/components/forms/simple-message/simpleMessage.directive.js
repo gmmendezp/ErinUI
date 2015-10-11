@@ -25,7 +25,7 @@
     return directive;
 
     /** @ngInject */
-    function SimpleMessageController($scope) {
+    function SimpleMessageController($scope, moment) {
       var vm = this;
 
       if (vm.user1 && vm.user2 && vm.mediator && vm.data) {
@@ -39,6 +39,7 @@
         $scope.urlImage = "http://cdn.iwillteachyoutoberich.com/wp-content/uploads/2008/11/generic-candy.jpg";
         $scope.text = vm.data.value;
         $scope.userId = vm.data.userId;
+        $scope.timestamp = moment(vm.data.timestamp).fromNow();
       }
     }
   }
