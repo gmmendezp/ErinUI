@@ -11,7 +11,7 @@
     $scope.init = function () {
       $http({
         method: 'GET',
-        url: 'http://54.152.26.54:8080/erin/component/metadata'
+        url: 'http://54.152.29.242:8080/erin/component/metadata'
       }).then(function successCallback(response) {
         $scope.questions = response.data;
       }, function errorCallback(response) {
@@ -43,6 +43,7 @@
       }, options);
       $scope.question.metaData.schema.properties.answer.title = $scope.title;
       $scope.question.metaData.schema.properties.answer.enum = options;
+      console.log($scope.question);
       $modalInstance.close($scope.question);
     };
 

@@ -21,11 +21,12 @@
     return directive;
 
     /** @ngInject */
-    function ConflictController($scope, $http) {
+    function ConflictController($scope, $http, $uibModal) {
       var vm = this;
       $scope.autoScrollEnabled = true;
 
       $scope.init = function () {
+
         $http({
           method: 'GET',
           url: 'http://54.152.29.242:8080/erin/conflict/561984c8e4b08d0146a80b62'
@@ -37,7 +38,6 @@
           // called asynchronously if an error occurs
           // or server returns response with an error status.
         });
-
 
         window.erinWebsocket = createWebSocket(
           'http://54.152.29.242:8080/erin/WebSockets', '/Output/Components',
@@ -61,22 +61,14 @@
         });
 
         modalInstance.result.then(function (selectedItem) {
-          console.log(selectedItem);
-          $http({
-            method: 'POST',
-            url: 'http://54.152.29.242:8080/erin/componentes/' + $scope.conflictId + '/form',
-            data: {
+          console.log(selectedItem)
+          if (selectedItem) {
+            erinWebsocket.send({
               "userId": "2",
               value: "",
               "structure": selectedItem
-            }
-          }).then(function () {
-            alert('algo');
-          }, function () {
-
-          });
-        }, function () {
-          $log.info('Modal dismissed at: ' + new Date());
+            }, "/Input/Components/" + $scope.conflictId + "/Form");
+          }
         });
       };
 
