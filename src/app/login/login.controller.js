@@ -30,7 +30,6 @@
             var userString = JSON.stringify(response.data);
             $cookies.put('user', userString);
             $location.path('/conflict');
-            window.user=user;
           }else{
             alert("Wrong username and password combination.")
           }
