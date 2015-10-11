@@ -7,7 +7,13 @@
     Mediador {{conflicts.mediator.name}}
     <br/>
     <div ng-repeat="component in conflicts.components">
-        <simple-message user1="conflicts.firstUser" user2="conflicts.secondtUser" mediator="conflicts.mediator" data="component" ></simple-message>
+
+        <simple-message
+          user1="conflicts.firstUser"
+          user2="conflicts.secondtUser"
+          mediator="conflicts.mediator"
+          data="component" ng-if="component.type == 'MESSAGE' " >
+        </simple-message>
     </div>
   </div>
 </div>
