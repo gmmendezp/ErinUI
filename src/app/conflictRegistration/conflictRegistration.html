@@ -1,3 +1,14 @@
-<div id="#conflictRegistration">
-
+<div id="spacer">
+  <a id="logout" ng-click="logout()">Logout</a>
 </div>
+
+<div id="conflictRegistration">
+  <div id="userImage">
+    <img src="{{user.smallImage}}"/>
+  </div>
+  <br>
+  Bievenida <b>{{user.name}}</b><br> ¿Cuéntanos cual es tu conflicto?
+  <textarea id="conflictDetail"></textarea>
+  <button id="conflictRegistrationButton" ng-click="registerConflict()">Generar Solicitud</button>
+</div>
+

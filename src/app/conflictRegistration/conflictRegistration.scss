@@ -1,6 +1,77 @@
-#conflictRegistration{
-  padding-top: 150px;
+#conflictRegistration {
   margin: 0px auto;
   width: 800px;
-  background-color: #0d2456;
+  font-family: 'Poiret One', cursive;
+  font-size: 35px;
+}
+
+#userImage{
+  float: left;
+  height: 256px;
+  width: 256px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+#spacer{
+  padding-top: 100px;
+  height: 150px;
+  width: 800px;
+  margin: 0px auto;
+}
+
+#logout{
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Raleway', sans-serif;
+  -webkit-transition: box-shadow 1s, -webkit-transform 1s;
+  transition: box-shadow 1s, transform 1s;
+}
+
+
+
+
+#logout:hover{
+  text-decoration: none;
+}
+
+#conflictDetail{
+  width: 800px;
+  border-radius: 15px;
+  height: 150px;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+  padding: 10px;
+  -webkit-transition: box-shadow 2s, -webkit-transform 2s;
+  transition: box-shadow 2s, transform 2s;
+}
+
+
+#conflictDetail:hover{
+  box-shadow: 0px 00px 10px #888;
+}
+
+#conflictDetail:focus { outline: none; }
+
+#conflictRegistrationButton{
+  border-radius: 5px;
+  background-color: #EEE;
+  float: right;
+  font-weight: bold;
+}
+
+
+#conflictRegistrationButton:hover{
+  outline: none;
+}
+
+#conflictRegistrationButton:focus{
+  outline: none;
+}
+
+.modal-header{
+  font-family: 'Poiret One', cursive;
+  font-size: 35px;
 }

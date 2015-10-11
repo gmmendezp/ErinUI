@@ -9,12 +9,15 @@
   function ConflictRegistration($scope, $cookies, $location, $http) {
     var vm = this;
 
-    if ($cookies.get("user")) {
-
-
+    var userCookie = $cookies.get("user");
+    if (userCookie) {
+      $scope.user = JSON.parse(userCookie);
     } else {
       $location.path('/');
     }
-  }
 
+    $scope.registerConflict = function(){
+      $location.path("/conflict");
+    }
+  }
 })();

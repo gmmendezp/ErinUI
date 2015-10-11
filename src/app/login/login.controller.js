@@ -9,9 +9,13 @@
   function LoginController($scope, $cookies, $location, $http) {
     var vm = this;
 
+
+
+
+
     if ($cookies.get("user")) {
 
-      $location.path('/conflict');
+      $location.path('/conflictRegistration');
 
     } else {
 
@@ -27,7 +31,7 @@
           if (user) {
             var userString = JSON.stringify(response.data);
             $cookies.put('user', userString);
-            $location.path('/conflict');
+            $location.path('/conflictRegistration');
           }else{
             alert("Wrong username and password combination.")
           }
