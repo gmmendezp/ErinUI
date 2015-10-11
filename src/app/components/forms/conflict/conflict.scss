@@ -82,3 +82,51 @@
 [scroll-glue-right] span{
   border: 1px solid black;
 }
+
+#conflict{
+
+  margin: 0px auto;
+  font-family: 'Poiret One', cursive;
+  font-size: 35px;
+}
+
+#pasosASeguir{
+  font-size: 20px;
+}
+#pasosASeguir h3{
+  margin: 0px;
+  padding: 0px;
+}
+
+
+#bottonCall{
+  font-size: 20px;
+}
+
+.glyphicon {
+  font-size: 30px;
+}
+
+#callAction{
+  color: #FFF;
+  transition: text-shadow 0.5s;
+  cursor: pointer;
+}
+#callAction:hover{
+  text-decoration: none;
+  outline: none;
+  text-shadow: 0px 0px 10px #FFF;
+}
+
+
+
+#askAction{
+  color: #FFF;
+  transition: text-shadow 0.5s;
+  cursor: pointer;
+}
+#askAction:hover{
+  text-decoration: none;
+  outline: none;
+  text-shadow: 0px 0px 10px #FFF;
+}

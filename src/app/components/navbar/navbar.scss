@@ -3,3 +3,23 @@
 }
 
 
+#spacer{
+  padding-top: 100px;
+  height: 150px;
+  width: 800px;
+  margin: 0px auto;
+}
+
+#logout{
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Raleway', sans-serif;
+  -webkit-transition: box-shadow 1s, -webkit-transform 1s;
+  transition: box-shadow 1s, transform 1s;
+}
+
+#spacer_h{
+  height: 100px;
+}
