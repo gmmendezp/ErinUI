@@ -28,7 +28,7 @@
       $scope.init = function() {
         $http({
           method: 'GET',
-          url: 'http://54.152.26.54:8080/erin/conflict/561984c8e4b08d0146a80b62'
+          url: 'http://54.152.29.242:8080/erin/conflict/561984c8e4b08d0146a80b62'
         }).then(function successCallback(response) {
           $scope.conflicts = response.data;
           $scope.conflictId = $scope.conflicts.id;
@@ -40,7 +40,7 @@
 
 
         window.erinWebsocket = createWebSocket(
-          'http://localhost:8080/erin/WebSockets', "/Input/Components/Message", '/Output/Components',
+          'http://54.152.29.242:8080/erin/WebSockets', "/Input/Components/Message", '/Output/Components',
           function (component) {
             var response = JSON.parse(component.body);
             console.log("Llega Response: ",response);

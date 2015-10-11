@@ -7,18 +7,18 @@
 
   function routeConfig($routeProvider) {
     $routeProvider
-      .when('/', {
+      .when('/conflict', {
         templateUrl: 'app/main/main.html',
         controller: 'MainController',
         controllerAs: 'main'
       })
-      .when('/login',  {
+      .when('/',  {
         templateUrl: 'app/login/login.html',
         controller: 'LoginController',
         controllerAs: 'login'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/login'
       });
   }
 
